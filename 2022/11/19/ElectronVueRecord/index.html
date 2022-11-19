@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>标签 - 草莓葱丁的小屋</title>
+    <title>构建Electron+Vue项目记录 - 草莓葱丁的小屋</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,24 +12,31 @@
     
 
     <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://umrabbit.github.io/tags.html">
+    <meta name="description" content="一、搭建项目1、使用vue-cli搭建项目npm uninstall vue-cli -g  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目 npm install vue-cli -g  全局安装vue-cli5.x脚手架 2、使用vue create创建项目在控制台输入vue create + 你的项目名 vue create desktop_test 选择需要的v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建Electron+Vue项目记录">
+<meta property="og:url" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/index.html">
 <meta property="og:site_name" content="草莓葱丁的小屋">
+<meta property="og:description" content="一、搭建项目1、使用vue-cli搭建项目npm uninstall vue-cli -g  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目 npm install vue-cli -g  全局安装vue-cli5.x脚手架 2、使用vue create创建项目在控制台输入vue create + 你的项目名 vue create desktop_test 选择需要的v">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-16T13:28:19.000Z">
-<meta property="article:modified_time" content="2022-11-17T08:32:42.753Z">
+<meta property="og:image" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/image-20221116103721822.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/image-20221116103901314.png">
+<meta property="article:published_time" content="2022-11-19T07:47:18.000Z">
+<meta property="article:modified_time" content="2022-11-19T08:01:54.098Z">
 <meta property="article:author" content="Umrabbit">
+<meta property="article:tag" content="Electron">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/image-20221116103721822.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1668844929629">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1668844929632">
     
-    <link rel="stylesheet" href="/css/style.css?v=1668844929629">
+    <link rel="stylesheet" href="/css/style.css?v=1668844929632">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -180,31 +187,82 @@
 
   <article>
       
-          <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-              <img data-fancybox="gallery" src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/cover.jpg" alt="标签" loading="lazy">
-              <h1>标签</h1>
+          <div class="nexmoe-post-cover" style="padding-bottom: 62.5%;"> 
+              <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/ElectronVueRecord.png" alt="构建Electron+Vue项目记录" loading="lazy">
+              <h1>构建Electron+Vue项目记录</h1>
           </div>
       
       
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2022年11月16日</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年11月19日</a>
 </div>
 
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     
-        <a><i class="nexmoefont icon-areachart"></i>约0字</a>
-        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
+        <a><i class="nexmoefont icon-areachart"></i>约631字</a>
+        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要2分钟</a>
     
 </div>
 
-      
+      <h2 id="一、搭建项目"><a href="#一、搭建项目" class="headerlink" title="一、搭建项目"></a>一、搭建项目</h2><h3 id="1、使用vue-cli搭建项目"><a href="#1、使用vue-cli搭建项目" class="headerlink" title="1、使用vue-cli搭建项目"></a>1、使用vue-cli搭建项目</h3><p><code>npm uninstall vue-cli -g</code>  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目</p>
+<p><code>npm install vue-cli -g</code>  全局安装vue-cli5.x脚手架</p>
+<h3 id="2、使用vue-create创建项目"><a href="#2、使用vue-create创建项目" class="headerlink" title="2、使用vue create创建项目"></a>2、使用vue create创建项目</h3><p>在控制台输入vue create + 你的项目名</p>
+<p><code>vue create desktop_test</code></p>
+<p>选择需要的vue版本(2&#x2F;3)即可</p>
+<h3 id="3、使用electron-builder安装Electron"><a href="#3、使用electron-builder安装Electron" class="headerlink" title="3、使用electron-builder安装Electron"></a>3、使用electron-builder安装Electron</h3><p><code>vue add electron-builder</code></p>
+<p>选择安装版本后，继续安装就报错了</p>
+<img src="/2022/11/19/ElectronVueRecord/image-20221116103721822.png" class="">
+
+
+
+<img src="/2022/11/19/ElectronVueRecord/image-20221116103901314.png" class="">
+
+<p>此时要将electron下载地址指向taobao镜像：</p>
+<p><code>npm config set electron_mirror &quot;https://npm.taobao.org/mirrors/electron/&quot;</code></p>
+<p>再次安装</p>
+<p>使用指令启动electron（如果此时报错找不到electron模块，npm install 一下即可）</p>
+<p><code>yarn run electron:serve</code></p>
+<h2 id="二、引入组件"><a href="#二、引入组件" class="headerlink" title="二、引入组件"></a>二、引入组件</h2><p>想要引入IView组件</p>
+<p>首先使用指令安装ivew</p>
+<p><code>npm install iview --save</code></p>
+<p>然后在main.js文件中引入即可</p>
+<pre><code class="js">import iView from &#39;iview&#39;
+import &#39;iview/dist/styles/iview.css&#39;
+
+Vue.use(iView)
+</code></pre>
+<h2 id="三、引入路由"><a href="#三、引入路由" class="headerlink" title="三、引入路由"></a>三、引入路由</h2><p><code>npm install vue-router@3.5.2</code></p>
+<p>由于本次使用的是的Vue2.x，一定一定要指定<a href="mailto:&#x76;&#x75;&#101;&#45;&#114;&#x6f;&#x75;&#116;&#x65;&#114;&#x40;&#51;&#46;&#120;">&#x76;&#x75;&#101;&#45;&#114;&#x6f;&#x75;&#116;&#x65;&#114;&#x40;&#51;&#46;&#120;</a>版本，不然会报错！</p>
+<p>详情见：<a target="_blank" rel="noopener" href="http://www.yaotu.net/biancheng/15467.html">“export ‘default‘ (imported as ‘VueRouter‘) was not found in ‘vue-router‘报错分析 (yaotu.net)</a></p>
+<hr>
+<p>新建文件夹Router，与Component文件夹同级，在其中新建index.js文件，引入路由并设置路由跳转</p>
+<p>参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jjjh968/article/details/120785547">(3条消息) vue路由router的基本使用及路由跳转的方式_ꪤ、匿名的博客-CSDN博客_router 跳转</a></p>
+<hr>
+<p>在main.js中也引入一下路由</p>
+<p>详情见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/woaixuexi5155/article/details/99958960">Vue报错：Unknown custom element: router-view - did you register the component correctly_Chanel-L的博客-CSDN博客</a></p>
+<hr>
+<p>设置默认路由</p>
+<p>参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_66664693/article/details/124935238">(3条消息) Vue默认路由_红丽*的博客-CSDN博客_vuerouter默认路由</a></p>
+<hr>
+<p>文件命名报错：Component name “index“ should always be multi-word</p>
+<p>新建.eslintrc.js文件，关闭组件命名规则</p>
+<p>详情见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013078755/article/details/123581070">(3条消息) 【vue eslint】报错Component name “xxxxx“ should always be multi-word.eslintvue&#x2F;四种解决方案_wally94的博客-CSDN博客</a></p>
+<h2 id="四、打开本地文件-amp-读取信息"><a href="#四、打开本地文件-amp-读取信息" class="headerlink" title="四、打开本地文件&amp;读取信息"></a>四、打开本地文件&amp;读取信息</h2><p>使用dialog.showOpenDialog()方法</p>
+<p>参考文档：</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/lsx589/vue3-electron/blob/master/src/views/file.vue">src&#x2F;views&#x2F;file.vue · bear&#x2F;vue3+electron - 码云 - 开源中国 (gitee.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lbn2676043895/article/details/93503247">(3条消息) electron实现打开本地文件接口（返回文件大小、文件名及文件后缀名和文件流等）_lbn2676043895的博客-CSDN博客</a></p>
+<hr>
+<p>使用fs.stat()方法读取文件大小，单位为字节：</p>
+<p><a target="_blank" rel="noopener" href="http://www.manongjc.com/detail/30-wzbnpkravhtgxbk.html">Node.js fs.stat()实例讲解 - 码农教程 (manongjc.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lxz123/p/13802367.html">node获取单个指定文件得大小 - 升级打怪 - 博客园 (cnblogs.com)</a></p>
+
   </article>
 
   
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>Umrabbit<br>
-        <strong>本文链接：</strong><a href="https://umrabbit.github.io/tags.html" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;tags.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;tags.html</a><br>
+        <strong>本文链接：</strong><a href="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;11&#x2F;19&#x2F;ElectronVueRecord&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;11&#x2F;19&#x2F;ElectronVueRecord&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -215,6 +273,10 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
     
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Electron/" rel="tag">Electron</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Vue/" rel="tag">Vue</a>
     
 </div>
 
@@ -273,7 +335,7 @@
 
  
 
-<script async src="/js/app.js?v=1668844929630"></script>
+<script async src="/js/app.js?v=1668844929633"></script>
 
 
 
