@@ -12,12 +12,12 @@
     
 
     <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
-    <meta name="description" content="¶一、结点含义 ReflectVector：输入入射向量和法线向量，通过该结点运算，可以输出反射方向向量。  ¶二、数学原理 在了解结点连接方式的背后，我们首先需要知道其数学原理 如图所示，已知入射向量V、法线n，求出射向量VR，其中，出射向量VR与入射向量V之间，大小相等，且与法线n之间的夹角均为θ  由于向量的平移不变性（向量平移后大小和方向都不变），我们可以将出射向量VR平移，如下图所示：">
+    <meta name="description" content="一、结点含义ReflectVector：输入入射向量和法线向量，通过该结点运算，可以输出反射方向向量。   二、数学原理在了解结点连接方式的背后，我们首先需要知道其数学原理 如图所示，已知入射向量V、法线n，求出射向量VR，其中，出射向量VR与入射向量V之间，大小相等，且与法线n之间的夹角均为θ   由于向量的平移不变性（向量平移后大小和方向都不变），我们可以将出射向量VR平移，如下图所示：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UE中ReflectVector结点详解">
 <meta property="og:url" content="https://umrabbit.github.io/2022/11/18/ReflectVector/index.html">
 <meta property="og:site_name" content="草莓葱丁的小屋">
-<meta property="og:description" content="¶一、结点含义 ReflectVector：输入入射向量和法线向量，通过该结点运算，可以输出反射方向向量。  ¶二、数学原理 在了解结点连接方式的背后，我们首先需要知道其数学原理 如图所示，已知入射向量V、法线n，求出射向量VR，其中，出射向量VR与入射向量V之间，大小相等，且与法线n之间的夹角均为θ  由于向量的平移不变性（向量平移后大小和方向都不变），我们可以将出射向量VR平移，如下图所示：">
+<meta property="og:description" content="一、结点含义ReflectVector：输入入射向量和法线向量，通过该结点运算，可以输出反射方向向量。   二、数学原理在了解结点连接方式的背后，我们首先需要知道其数学原理 如图所示，已知入射向量V、法线n，求出射向量VR，其中，出射向量VR与入射向量V之间，大小相等，且与法线n之间的夹角均为θ   由于向量的平移不变性（向量平移后大小和方向都不变），我们可以将出射向量VR平移，如下图所示：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://umrabbit.github.io/2022/11/18/ReflectVector/%E8%8A%82%E7%82%B9%E5%9B%BE.png">
 <meta property="og:image" content="https://umrabbit.github.io/2022/11/18/ReflectVector/0.png">
@@ -40,9 +40,9 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1669256912813">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1669257281236">
     
-    <link rel="stylesheet" href="/css/style.css?v=1669256912814">
+    <link rel="stylesheet" href="/css/style.css?v=1669257281236">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -205,34 +205,39 @@
 
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     
-        <a><i class="nexmoefont icon-areachart"></i>约346字</a>
+        <a><i class="nexmoefont icon-areachart"></i>约349字</a>
         <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
     
 </div>
 
-      <h2 id="一、结点含义"><a class="header-anchor" href="#一、结点含义">¶</a>一、结点含义</h2>
-<p>ReflectVector：<strong>输入入射向量和法线向量</strong>，通过该结点运算，可以<strong>输出反射方向向量</strong>。</p>
+      <h2 id="一、结点含义"><a href="#一、结点含义" class="headerlink" title="一、结点含义"></a>一、结点含义</h2><p>ReflectVector：<strong>输入入射向量和法线向量</strong>，通过该结点运算，可以<strong>输出反射方向向量</strong>。</p>
 <img src="/2022/11/18/ReflectVector/%E8%8A%82%E7%82%B9%E5%9B%BE.png" class="">
-<h2 id="二、数学原理"><a class="header-anchor" href="#二、数学原理">¶</a>二、数学原理</h2>
-<p>在了解结点连接方式的背后，我们首先需要知道其数学原理</p>
-<p>如图所示，已知入射向量V、法线n，求出射向量V<sub>R</sub>，其中，出射向量V<sub>R</sub>与入射向量V之间，大小相等，且与法线n之间的夹角均为θ</p>
+
+<h2 id="二、数学原理"><a href="#二、数学原理" class="headerlink" title="二、数学原理"></a>二、数学原理</h2><p>在了解结点连接方式的背后，我们首先需要知道其数学原理</p>
+<p>如图所示，已知入射向量V、法线n，求出射向量V<del>R</del>，其中，出射向量V<del>R</del>与入射向量V之间，大小相等，且与法线n之间的夹角均为θ</p>
 <img src="/2022/11/18/ReflectVector/0.png" class="">
-<p>由于向量的平移不变性（向量平移后大小和方向都不变），我们可以将出射向量V<sub>R</sub>平移，如下图所示：</p>
+
+<p>由于向量的平移不变性（向量平移后大小和方向都不变），我们可以将出射向量V<del>R</del>平移，如下图所示：</p>
 <img src="/2022/11/18/ReflectVector/1.png" class="">
-<p>由于V<sub>R</sub>与V的大小相等，所以此时构成了一个等腰三角形</p>
-<p>从V向n作垂线，长度为|V<sub>P</sub>|，其为V向n投影的长度：|V<sub>P</sub>|=|V|cosθ</p>
-<p>|V<sub>P</sub>|再乘以法线方向，就得到了V在n方向上的投影：V<sub>P</sub>=n|V|cosθ</p>
+
+<p>由于V<del>R</del>与V的大小相等，所以此时构成了一个等腰三角形</p>
+<p>从V向n作垂线，长度为|V<del>P</del>|，其为V向n投影的长度：|V<del>P</del>|&#x3D;|V|cosθ</p>
+<p>|V<del>P</del>|再乘以法线方向，就得到了V在n方向上的投影：V<del>P</del>&#x3D;n|V|cosθ</p>
 <img src="/2022/11/18/ReflectVector/2.png" class="">
+
 <p>又由于其是等腰三角形，V向其边作垂线，得到的是其边长的一半</p>
-<p>那么如图所示，粉色向量可以由2V<sub>P</sub>来表示</p>
+<p>那么如图所示，粉色向量可以由2V<del>P</del>来表示</p>
 <img src="/2022/11/18/ReflectVector/3.png" class="">
-<p>那么反射向量V<sub>R</sub>可以用以下公式表示：<strong>V<sub>R</sub>=V-2V<sub>P</sub></strong></p>
+
+<p>那么反射向量V<del>R</del>可以用以下公式表示：<strong>V<del>R</del>&#x3D;V-2V<del>P</del></strong></p>
 <img src="/2022/11/18/ReflectVector/4.png" class="">
-<h2 id="三、内部连线"><a class="header-anchor" href="#三、内部连线">¶</a>三、内部连线</h2>
-<p>双击打开结点，即可见其内部连线方式，ReflectVector结点内部连线如下：</p>
+
+<h2 id="三、内部连线"><a href="#三、内部连线" class="headerlink" title="三、内部连线"></a>三、内部连线</h2><p>双击打开结点，即可见其内部连线方式，ReflectVector结点内部连线如下：</p>
 <img src="/2022/11/18/ReflectVector/inside.png" class="">
+
 <p>运算过程如图所示：</p>
 <img src="/2022/11/18/ReflectVector/%E6%8E%A8%E5%AF%BC.jpg" class="">
+
 <p>注：由于UE中的法向量都是单位向量，所以其模长为1</p>
 
   </article>
@@ -314,7 +319,7 @@
 
  
 
-<script async src="/js/app.js?v=1669256912814"></script>
+<script async src="/js/app.js?v=1669257281236"></script>
 
 
 
