@@ -12,12 +12,12 @@
     
 
     <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
-    <meta name="description" content="前言:feet:该文档是写个小白师弟看的，放在博客里存个档~ 一、运行方法首先在VSCode中拉取最新项目（源代码管理&gt;拉取） 打开终端，使用npm install指令，安装项目所需要的依赖包 在终端中使用npm run electron:serve 指令，运行项目即可 二、目录结构及功能1、概述项目整体目录结构如下图所示：   主要文件功能说明如下： dist_electron：存放ele">
+    <meta name="description" content="¶前言 🐾该文档是写个小白师弟看的，放在博客里存个档~ ¶一、运行方法 首先在VSCode中拉取最新项目（源代码管理&gt;拉取） 打开终端，使用npm install指令，安装项目所需要的依赖包 在终端中使用npm run electron:serve 指令，运行项目即可 ¶二、目录结构及功能 ¶1、概述 项目整体目录结构如下图所示：  主要文件功能说明如下： dist_electron：存放">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron+Vue+ElementUI+Iconify项目使用指南">
 <meta property="og:url" content="https://umrabbit.github.io/2022/11/24/electron-vue-document/index.html">
 <meta property="og:site_name" content="草莓葱丁的小屋">
-<meta property="og:description" content="前言:feet:该文档是写个小白师弟看的，放在博客里存个档~ 一、运行方法首先在VSCode中拉取最新项目（源代码管理&gt;拉取） 打开终端，使用npm install指令，安装项目所需要的依赖包 在终端中使用npm run electron:serve 指令，运行项目即可 二、目录结构及功能1、概述项目整体目录结构如下图所示：   主要文件功能说明如下： dist_electron：存放ele">
+<meta property="og:description" content="¶前言 🐾该文档是写个小白师弟看的，放在博客里存个档~ ¶一、运行方法 首先在VSCode中拉取最新项目（源代码管理&gt;拉取） 打开终端，使用npm install指令，安装项目所需要的依赖包 在终端中使用npm run electron:serve 指令，运行项目即可 ¶二、目录结构及功能 ¶1、概述 项目整体目录结构如下图所示：  主要文件功能说明如下： dist_electron：存放">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://umrabbit.github.io/2022/11/24/electron-vue-document/image-20221124093608678.png">
 <meta property="og:image" content="https://umrabbit.github.io/2022/11/24/electron-vue-document/image-20221124094748021.png">
@@ -34,9 +34,9 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1669256716103">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1669256912809">
     
-    <link rel="stylesheet" href="/css/style.css?v=1669256716103">
+    <link rel="stylesheet" href="/css/style.css?v=1669256912809">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -199,40 +199,46 @@
 
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     
-        <a><i class="nexmoefont icon-areachart"></i>约458字</a>
+        <a><i class="nexmoefont icon-areachart"></i>约455字</a>
         <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
     
 </div>
 
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>:feet:该文档是写个小白师弟看的，放在博客里存个档~</p>
-<h2 id="一、运行方法"><a href="#一、运行方法" class="headerlink" title="一、运行方法"></a>一、运行方法</h2><p>首先在VSCode中拉取最新项目（源代码管理&gt;拉取）</p>
+      <h2 id="前言"><a class="header-anchor" href="#前言">¶</a>前言</h2>
+<p>🐾该文档是写个小白师弟看的，放在博客里存个档~</p>
+<h2 id="一、运行方法"><a class="header-anchor" href="#一、运行方法">¶</a>一、运行方法</h2>
+<p>首先在VSCode中拉取最新项目（源代码管理&gt;拉取）</p>
 <p>打开终端，使用<code>npm install</code>指令，安装项目所需要的依赖包</p>
 <p>在终端中使用<code>npm run electron:serve </code>指令，运行项目即可</p>
-<h2 id="二、目录结构及功能"><a href="#二、目录结构及功能" class="headerlink" title="二、目录结构及功能"></a>二、目录结构及功能</h2><h3 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h3><p>项目整体目录结构如下图所示：</p>
+<h2 id="二、目录结构及功能"><a class="header-anchor" href="#二、目录结构及功能">¶</a>二、目录结构及功能</h2>
+<h3 id="1、概述"><a class="header-anchor" href="#1、概述">¶</a>1、概述</h3>
+<p>项目整体目录结构如下图所示：</p>
 <img src="/2022/11/24/electron-vue-document/image-20221124093608678.png" class="">
-
 <p>主要文件功能说明如下：</p>
 <p>dist_electron：存放electron打包后的文件</p>
 <p>public：存放公共资源</p>
-<p>:star:<strong>src：存放主要代码文件</strong></p>
+<p>⭐<strong>src：存放主要代码文件</strong></p>
 <p>.eslintrc.js：设置语法规则</p>
 <p>package.json：规定项目需要的依赖包版本</p>
-<h3 id="2、重点目录说明"><a href="#2、重点目录说明" class="headerlink" title="2、重点目录说明"></a>2、重点目录说明</h3><p>上述目录中，<strong>src文件夹</strong>最为重要，主要界面都存放在其中，其结构如下图所示：</p>
+<h3 id="2、重点目录说明"><a class="header-anchor" href="#2、重点目录说明">¶</a>2、重点目录说明</h3>
+<p>上述目录中，<strong>src文件夹</strong>最为重要，主要界面都存放在其中，其结构如下图所示：</p>
 <img src="/2022/11/24/electron-vue-document/image-20221124094748021.png" class="">
-
 <p>主要文件功能说明如下：</p>
-<p>:star:<strong>components：存放构成该项目的各个页面组件</strong></p>
+<p>⭐<strong>components：存放构成该项目的各个页面组件</strong></p>
 <p>login：存放登录界面</p>
 <p>router：存放路由相关文件，其中index.js设置了各界面之间的跳转路径</p>
 <p>App.vue：整个项目的根界面，其他所有界面都是以组件的形式插入进去</p>
 <p>background.js：控制electron的主进程，可以控制各窗口的状态</p>
 <p>index.js：主界面的入口文件，涉及全局引入部件、注册挂载根节点等</p>
 <p>login.js：登陆界面的入口文件</p>
-<h2 id="三、其他"><a href="#三、其他" class="headerlink" title="三、其他"></a>三、其他</h2><h3 id="1、组件"><a href="#1、组件" class="headerlink" title="1、组件"></a>1、组件</h3><p>本项目中使用的组件库为ElementUI和iView，已在整体引用，在项目中直接使用即可</p>
+<h2 id="三、其他"><a class="header-anchor" href="#三、其他">¶</a>三、其他</h2>
+<h3 id="1、组件"><a class="header-anchor" href="#1、组件">¶</a>1、组件</h3>
+<p>本项目中使用的组件库为ElementUI和iView，已在整体引用，在项目中直接使用即可</p>
 <p>具体使用方法请参考其官方文档：</p>
 <p><a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN">Element - 网站快速成型工具</a></p>
 <p><a target="_blank" rel="noopener" href="http://iview.talkingdata.com/#/">iView - A high quality UI Toolkit based on Vue.js (talkingdata.com)</a></p>
-<h3 id="2、图标"><a href="#2、图标" class="headerlink" title="2、图标"></a>2、图标</h3><p>本项目中使用的图标库为iconify</p>
+<h3 id="2、图标"><a class="header-anchor" href="#2、图标">¶</a>2、图标</h3>
+<p>本项目中使用的图标库为iconify</p>
 <p>文件存放在src&gt;components&gt;Icons文件夹中，使用方法和组件一样</p>
 
   </article>
@@ -314,7 +320,7 @@
 
  
 
-<script async src="/js/app.js?v=1669256716104"></script>
+<script async src="/js/app.js?v=1669256912810"></script>
 
 
 
