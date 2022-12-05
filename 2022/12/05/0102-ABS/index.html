@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>UE数学结点详解-0101-ABS绝对值 - 草莓葱丁的小屋</title>
+    <title>UE数学结点详解-0102-ABS绝对值 - 草莓葱丁的小屋</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -14,30 +14,30 @@
     <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
     <meta name="description" content="💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处 🎪版本：基于的引擎版本为4.26 一、函数功能本次介绍的函数为：ABS绝对值函数，其作用在于将y&lt;0的部分，沿着x轴对称翻上来。 其函数图像如下所示：   二、使用示例⌛官方给出的是一个沿世界坐标z轴上下跳跃的小球，其材质连线如图所示：   该节点较为简单，上方以Time输入到Sine函数中去，通过Abs绝对值函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UE数学结点详解-0101-ABS绝对值">
-<meta property="og:url" content="https://umrabbit.github.io/2022/12/05/0101-ABS/index.html">
+<meta property="og:title" content="UE数学结点详解-0102-ABS绝对值">
+<meta property="og:url" content="https://umrabbit.github.io/2022/12/05/0102-ABS/index.html">
 <meta property="og:site_name" content="草莓葱丁的小屋">
 <meta property="og:description" content="💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处 🎪版本：基于的引擎版本为4.26 一、函数功能本次介绍的函数为：ABS绝对值函数，其作用在于将y&lt;0的部分，沿着x轴对称翻上来。 其函数图像如下所示：   二、使用示例⌛官方给出的是一个沿世界坐标z轴上下跳跃的小球，其材质连线如图所示：   该节点较为简单，上方以Time输入到Sine函数中去，通过Abs绝对值函数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0101-ABS/absFunction.png">
-<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0101-ABS/image-20221205153527540.png">
-<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0101-ABS/absSine.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0102-ABS/absFunction.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0102-ABS/image-20221205153527540.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0102-ABS/absSine.png">
 <meta property="article:published_time" content="2022-12-05T07:24:15.000Z">
-<meta property="article:modified_time" content="2022-12-05T08:07:30.686Z">
+<meta property="article:modified_time" content="2022-12-05T08:17:24.987Z">
 <meta property="article:author" content="Umrabbit">
 <meta property="article:tag" content="结点详解">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://umrabbit.github.io/2022/12/05/0101-ABS/absFunction.png">
+<meta name="twitter:image" content="https://umrabbit.github.io/2022/12/05/0102-ABS/absFunction.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670227672712">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670228279233">
     
-    <link rel="stylesheet" href="/css/style.css?v=1670227672712">
+    <link rel="stylesheet" href="/css/style.css?v=1670228279233">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -189,8 +189,8 @@
   <article>
       
           <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
-              <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/0101.png" alt="UE数学结点详解-0101-ABS绝对值" loading="lazy">
-              <h1>UE数学结点详解-0101-ABS绝对值</h1>
+              <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/0101.png" alt="UE数学结点详解-0102-ABS绝对值" loading="lazy">
+              <h1>UE数学结点详解-0102-ABS绝对值</h1>
           </div>
       
       
@@ -209,14 +209,14 @@
 <p>🎪版本：基于的引擎版本为4.26</p>
 <h2 id="一、函数功能"><a href="#一、函数功能" class="headerlink" title="一、函数功能"></a>一、函数功能</h2><p>本次介绍的函数为：<strong>ABS绝对值函数</strong>，其作用在于将y&lt;0的部分，沿着x轴对称翻上来。</p>
 <p>其函数图像如下所示：</p>
-<img src="/2022/12/05/0101-ABS/absFunction.png" class="">
+<img src="/2022/12/05/0102-ABS/absFunction.png" class="">
 
 <h2 id="二、使用示例"><a href="#二、使用示例" class="headerlink" title="二、使用示例"></a>二、使用示例</h2><p>⌛官方给出的是一个沿世界坐标z轴上下跳跃的小球，其材质连线如图所示：</p>
-<img src="/2022/12/05/0101-ABS/image-20221205153527540.png" class="" title="image-20221205153527540">
+<img src="/2022/12/05/0102-ABS/image-20221205153527540.png" class="" title="image-20221205153527540">
 
 <p>该节点较为简单，上方以Time输入到Sine函数中去，通过Abs绝对值函数将y轴下方图像翻上来，连接到线性插值Lerp的Alpha节点上，用于控制(0,0,-100)~(0,0,0)之间的插值程度，即小球的跳跃高度。最终将结果连接到WorldPositionOffset(世界位置偏移)上去。</p>
 <p>上方结点最终形成的图像大致如下所示：</p>
-<img src="/2022/12/05/0101-ABS/absSine.png" class="">
+<img src="/2022/12/05/0102-ABS/absSine.png" class="">
 
   </article>
 
@@ -224,7 +224,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>Umrabbit<br>
-        <strong>本文链接：</strong><a href="https://umrabbit.github.io/2022/12/05/0101-ABS/" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;0101-ABS&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;0101-ABS&#x2F;</a><br>
+        <strong>本文链接：</strong><a href="https://umrabbit.github.io/2022/12/05/0102-ABS/" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;0102-ABS&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;0102-ABS&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -297,7 +297,7 @@
 
  
 
-<script async src="/js/app.js?v=1670227672713"></script>
+<script async src="/js/app.js?v=1670228279234"></script>
 
 
 
