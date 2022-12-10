@@ -6,23 +6,23 @@
     
     <title>构建Electron+Vue项目记录 - 草莓葱丁的小屋</title>
     <meta charset="UTF-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="null">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     
 
     <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
-    <meta name="description" content="一、搭建项目1、使用vue-cli搭建项目npm uninstall vue-cli -g  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目 npm install vue-cli -g  全局安装vue-cli5.x脚手架 2、使用vue create创建项目在控制台输入vue create + 你的项目名 vue create desktop_test 选择需要的v">
+    <meta name="description" content="¶一、搭建项目 ¶1、使用vue-cli搭建项目 npm uninstall vue-cli -g  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目 npm install vue-cli -g  全局安装vue-cli5.x脚手架 ¶2、使用vue create创建项目 在控制台输入vue create + 你的项目名 vue create desktop_test">
 <meta property="og:type" content="article">
 <meta property="og:title" content="构建Electron+Vue项目记录">
 <meta property="og:url" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/index.html">
 <meta property="og:site_name" content="草莓葱丁的小屋">
-<meta property="og:description" content="一、搭建项目1、使用vue-cli搭建项目npm uninstall vue-cli -g  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目 npm install vue-cli -g  全局安装vue-cli5.x脚手架 2、使用vue create创建项目在控制台输入vue create + 你的项目名 vue create desktop_test 选择需要的v">
+<meta property="og:description" content="¶一、搭建项目 ¶1、使用vue-cli搭建项目 npm uninstall vue-cli -g  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目 npm install vue-cli -g  全局安装vue-cli5.x脚手架 ¶2、使用vue create创建项目 在控制台输入vue create + 你的项目名 vue create desktop_test">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/image-20221116103721822.png">
 <meta property="og:image" content="https://umrabbit.github.io/2022/11/19/ElectronVueRecord/image-20221116103901314.png">
 <meta property="article:published_time" content="2022-11-19T07:47:18.000Z">
-<meta property="article:modified_time" content="2022-12-02T09:14:03.313Z">
+<meta property="article:modified_time" content="2022-12-06T13:06:09.772Z">
 <meta property="article:author" content="Umrabbit">
 <meta property="article:tag" content="Electron">
 <meta property="article:tag" content="Vue">
@@ -34,9 +34,9 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670232714151">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670656139266">
     
-    <link rel="stylesheet" href="/css/style.css?v=1670232714151">
+    <link rel="stylesheet" href="/css/style.css?v=1670656139266">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>8</div>
+        <div><span>文章</span>7</div>
         <div><span>标签</span>8</div>
         <div><span>分类</span>3</div>
     </div>
@@ -138,7 +138,14 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/UE/">UE</a>
-          <span class="category-list-count">3</span>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/人工智能/">人工智能</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -146,13 +153,6 @@
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/前端/">前端</a>
           <span class="category-list-count">3</span>
-        </li>
-
-        
-
-        <li class="category-list-item">
-          <a class="category-list-link" href="/categories/测试/">测试</a>
-          <span class="category-list-count">1</span>
         </li>
 
         
@@ -166,7 +166,7 @@
     
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/Electron/" style="font-size: 15px;">Electron</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 15px;">数学</a> <a href="/tags/%E7%89%B9%E6%95%88/" style="font-size: 10px;">特效</a> <a href="/tags/%E7%BB%93%E7%82%B9%E8%AF%A6%E8%A7%A3/" style="font-size: 20px;">结点详解</a>
+      <a href="/tags/Electron/" style="font-size: 20px;">Electron</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a> <a href="/tags/text-to-image/" style="font-size: 10px;">text to image</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 10px;">人工智能</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 20px;">数学</a> <a href="/tags/%E7%89%B9%E6%95%88/" style="font-size: 10px;">特效</a> <a href="/tags/%E7%BB%93%E7%82%B9%E8%AF%A6%E8%A7%A3/" style="font-size: 20px;">结点详解</a>
     </div>
     
   </div>
@@ -199,40 +199,42 @@
 
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     
-        <a><i class="nexmoefont icon-areachart"></i>约1.2k字</a>
-        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要4分钟</a>
+        <a><i class="nexmoefont icon-areachart"></i>约1.4k字</a>
+        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要5分钟</a>
     
 </div>
 
-      <h2 id="一、搭建项目"><a href="#一、搭建项目" class="headerlink" title="一、搭建项目"></a>一、搭建项目</h2><h3 id="1、使用vue-cli搭建项目"><a href="#1、使用vue-cli搭建项目" class="headerlink" title="1、使用vue-cli搭建项目"></a>1、使用vue-cli搭建项目</h3><p><code>npm uninstall vue-cli -g</code>  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目</p>
+      <h2 id="一、搭建项目"><a class="header-anchor" href="#一、搭建项目">¶</a>一、搭建项目</h2>
+<h3 id="1、使用vue-cli搭建项目"><a class="header-anchor" href="#1、使用vue-cli搭建项目">¶</a>1、使用vue-cli搭建项目</h3>
+<p><code>npm uninstall vue-cli -g</code>  先卸载已有的vue2.x脚手架，因为其无法使用vue create创建项目</p>
 <p><code>npm install vue-cli -g</code>  全局安装vue-cli5.x脚手架</p>
-<h3 id="2、使用vue-create创建项目"><a href="#2、使用vue-create创建项目" class="headerlink" title="2、使用vue create创建项目"></a>2、使用vue create创建项目</h3><p>在控制台输入vue create + 你的项目名</p>
+<h3 id="2、使用vue-create创建项目"><a class="header-anchor" href="#2、使用vue-create创建项目">¶</a>2、使用vue create创建项目</h3>
+<p>在控制台输入vue create + 你的项目名</p>
 <p><code>vue create desktop_test</code></p>
-<p>选择需要的vue版本(2&#x2F;3)即可</p>
-<h3 id="3、使用electron-builder安装Electron"><a href="#3、使用electron-builder安装Electron" class="headerlink" title="3、使用electron-builder安装Electron"></a>3、使用electron-builder安装Electron</h3><p><code>vue add electron-builder</code></p>
+<p>选择需要的vue版本(2/3)即可</p>
+<h3 id="3、使用electron-builder安装Electron"><a class="header-anchor" href="#3、使用electron-builder安装Electron">¶</a>3、使用electron-builder安装Electron</h3>
+<p><code>vue add electron-builder</code></p>
 <p>选择安装版本后，继续安装就报错了</p>
 <img src="/2022/11/19/ElectronVueRecord/image-20221116103721822.png" class="">
-
-
-
 <img src="/2022/11/19/ElectronVueRecord/image-20221116103901314.png" class="">
-
 <p>此时要将electron下载地址指向taobao镜像：</p>
 <p><code>npm config set electron_mirror &quot;https://npm.taobao.org/mirrors/electron/&quot;</code></p>
 <p>再次安装</p>
 <p>使用指令启动electron（如果此时报错找不到electron模块，npm install 一下即可）</p>
 <p><code>yarn run electron:serve</code></p>
-<h2 id="二、引入组件"><a href="#二、引入组件" class="headerlink" title="二、引入组件"></a>二、引入组件</h2><p>想要引入IView组件</p>
+<h2 id="二、引入组件"><a class="header-anchor" href="#二、引入组件">¶</a>二、引入组件</h2>
+<p>想要引入IView组件</p>
 <p>首先使用指令安装ivew</p>
 <p><code>npm install iview --save</code></p>
 <p>然后在main.js文件中引入即可</p>
-<pre><code class="js">import iView from &#39;iview&#39;
-import &#39;iview/dist/styles/iview.css&#39;
+<pre><code class="language-js">import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 
 Vue.use(iView)
 </code></pre>
-<h2 id="三、引入路由"><a href="#三、引入路由" class="headerlink" title="三、引入路由"></a>三、引入路由</h2><p><code>npm install vue-router@3.5.2</code></p>
-<p>由于本次使用的是的Vue2.x，一定一定要指定<a href="mailto:&#118;&#117;&#101;&#45;&#114;&#x6f;&#x75;&#x74;&#101;&#x72;&#64;&#x33;&#46;&#x78;">&#118;&#117;&#101;&#45;&#114;&#x6f;&#x75;&#x74;&#101;&#x72;&#64;&#x33;&#46;&#x78;</a>版本，不然会报错！</p>
+<h2 id="三、引入路由"><a class="header-anchor" href="#三、引入路由">¶</a>三、引入路由</h2>
+<p><code>npm install vue-router@3.5.2</code></p>
+<p>由于本次使用的是的Vue2.x，一定一定要指定vue-router@3.x版本，不然会报错！</p>
 <p>详情见：<a target="_blank" rel="noopener" href="http://www.yaotu.net/biancheng/15467.html">“export ‘default‘ (imported as ‘VueRouter‘) was not found in ‘vue-router‘报错分析 (yaotu.net)</a></p>
 <hr>
 <p>新建文件夹Router，与Component文件夹同级，在其中新建index.js文件，引入路由并设置路由跳转</p>
@@ -246,16 +248,19 @@ Vue.use(iView)
 <hr>
 <p>文件命名报错：Component name “index“ should always be multi-word</p>
 <p>新建.eslintrc.js文件，关闭组件命名规则</p>
-<p>详情见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013078755/article/details/123581070">(3条消息) 【vue eslint】报错Component name “xxxxx“ should always be multi-word.eslintvue&#x2F;四种解决方案_wally94的博客-CSDN博客</a></p>
-<h2 id="四、功能实现"><a href="#四、功能实现" class="headerlink" title="四、功能实现"></a>四、功能实现</h2><h3 id="1、打开本地文件-amp-读取信息"><a href="#1、打开本地文件-amp-读取信息" class="headerlink" title="1、打开本地文件&amp;读取信息"></a>1、打开本地文件&amp;读取信息</h3><p>使用dialog.showOpenDialog()方法</p>
+<p>详情见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013078755/article/details/123581070">(3条消息) 【vue eslint】报错Component name “xxxxx“ should always be multi-word.eslintvue/四种解决方案_wally94的博客-CSDN博客</a></p>
+<h2 id="四、功能实现"><a class="header-anchor" href="#四、功能实现">¶</a>四、功能实现</h2>
+<h3 id="1、打开本地文件-读取信息"><a class="header-anchor" href="#1、打开本地文件-读取信息">¶</a>1、打开本地文件&amp;读取信息</h3>
+<p>使用dialog.showOpenDialog()方法</p>
 <p>参考文档：</p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/lsx589/vue3-electron/blob/master/src/views/file.vue">src&#x2F;views&#x2F;file.vue · bear&#x2F;vue3+electron - 码云 - 开源中国 (gitee.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/lsx589/vue3-electron/blob/master/src/views/file.vue">src/views/file.vue · bear/vue3+electron - 码云 - 开源中国 (gitee.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lbn2676043895/article/details/93503247">(3条消息) electron实现打开本地文件接口（返回文件大小、文件名及文件后缀名和文件流等）_lbn2676043895的博客-CSDN博客</a></p>
 <hr>
 <p>使用fs.stat()方法读取文件大小，单位为字节：</p>
 <p><a target="_blank" rel="noopener" href="http://www.manongjc.com/detail/30-wzbnpkravhtgxbk.html">Node.js fs.stat()实例讲解 - 码农教程 (manongjc.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lxz123/p/13802367.html">node获取单个指定文件得大小 - 升级打怪 - 博客园 (cnblogs.com)</a></p>
-<h3 id="2、实现右键菜单"><a href="#2、实现右键菜单" class="headerlink" title="2、实现右键菜单"></a>2、实现右键菜单</h3><p><code>v-contextmenu</code>通过该包实现</p>
+<h3 id="2、实现右键菜单"><a class="header-anchor" href="#2、实现右键菜单">¶</a>2、实现右键菜单</h3>
+<p><code>v-contextmenu</code>通过该包实现</p>
 <p><code>vue-runtime-helpers</code>同时也要装哦</p>
 <p>安装参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44867717/article/details/125593925">(4条消息) vue中，右键菜单组件v-contextmenu的使用_viceen的博客-CSDN博客_vue右键菜单组件</a></p>
 <p>基础实现参考文档：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/whblogs/p/13615773.html">【鼠标右击组件】v-contextmenu - WANGHUAN- - 博客园 (cnblogs.com)</a></p>
@@ -268,17 +273,18 @@ Vue.use(iView)
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>@click() &#x2F; @dblclick()</td>
-<td>单击事件 &#x2F; 双击事件</td>
+<tbody>
+<tr>
+<td>@click() / @dblclick()</td>
+<td>单击事件 / 双击事件</td>
 </tr>
 <tr>
 <td>@rightClick()</td>
 <td>右击触发事件</td>
 </tr>
 <tr>
-<td>@mousedown() &#x2F; @mouseup()</td>
-<td>按下触发 &#x2F; 抬起触发事件</td>
+<td>@mousedown() / @mouseup()</td>
+<td>按下触发 / 抬起触发事件</td>
 </tr>
 <tr>
 <td>@mousemove()</td>
@@ -300,17 +306,29 @@ Vue.use(iView)
 <td>@mouseover()</td>
 <td>当鼠标指针位于元素上方时，会发生 mouseover 事件</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>🍁注意：</p>
 <p>①与 mouseleave 事件不同，不论鼠标指针离开<code>被选元素还是任何子元素，</code>都会触发 mouseout 事件。</p>
 <p>②mouseover 事件在鼠标指针进入<code>被选元素或任意子元素时</code>都会被触发，mouseenter 事件只有在鼠标指针进入<code>被选元素</code>时被触发。</p>
-<h3 id="3、绑定属性"><a href="#3、绑定属性" class="headerlink" title="3、绑定属性"></a>3、绑定属性</h3><p>实现属性的动态切换，可绑定自定义的也可绑原生的</p>
+<h3 id="3、绑定属性"><a class="header-anchor" href="#3、绑定属性">¶</a>3、绑定属性</h3>
+<p>实现属性的动态切换，可绑定自定义的也可绑原生的</p>
 <p>参考文档：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46613429/article/details/118926787?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-118926787-blog-122136728.pc_relevant_3mothn_strategy_and_data_recovery&spm=1001.2101.3001.4242.2&utm_relevant_index=4">(4条消息) Vue动态绑定属性—指令v-bind_落雪小轩韩的博客-CSDN博客_vue动态绑定属性值</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46613429/article/details/118926787?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-118926787-blog-122136728.pc_relevant_3mothn_strategy_and_data_recovery&amp;spm=1001.2101.3001.4242.2&amp;utm_relevant_index=4">(4条消息) Vue动态绑定属性—指令v-bind_落雪小轩韩的博客-CSDN博客_vue动态绑定属性值</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wasane/article/details/122136728">(4条消息) Vue.js绑定属性v-bind_盛世如恋的博客-CSDN博客_vue绑定属性是变量</a></p>
-<h3 id="4、js数组删除指定下标元素"><a href="#4、js数组删除指定下标元素" class="headerlink" title="4、js数组删除指定下标元素"></a>4、js数组删除指定下标元素</h3><p>项目中遇到的情况：需要删除数组对象中指定元素，使用<code>this.files.splice(index,1)</code>方法，注意，前面传入的是数组下标，返回值是被剔除的那个元素。参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52309519/article/details/125591840">(4条消息) JS数组删除指定下标元素_大浩籽的博客-CSDN博客_js数组删除指定下标元素</a></p>
-<h3 id="5、监听数据变化"><a href="#5、监听数据变化" class="headerlink" title="5、监听数据变化"></a>5、监听数据变化</h3><p>但是尤其是对象，写在watch里要深度监听，挺耗费性能的，所以尽量不去用</p>
+<h3 id="4、js数组删除指定下标元素"><a class="header-anchor" href="#4、js数组删除指定下标元素">¶</a>4、js数组删除指定下标元素</h3>
+<p>项目中遇到的情况：需要删除数组对象中指定元素，使用<code>this.files.splice(index,1)</code>方法，注意，前面传入的是数组下标，返回值是被剔除的那个元素。参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52309519/article/details/125591840">(4条消息) JS数组删除指定下标元素_大浩籽的博客-CSDN博客_js数组删除指定下标元素</a></p>
+<h3 id="5、监听数据变化"><a class="header-anchor" href="#5、监听数据变化">¶</a>5、监听数据变化</h3>
+<p>但是尤其是对象，写在watch里要深度监听，挺耗费性能的，所以尽量不去用</p>
 <p>基础用法：<a target="_blank" rel="noopener" href="http://t.zoukankan.com/houxianzhou-p-13725074.html">vue2.0中watch用法 - 走看看 (zoukankan.com)</a></p>
+<h3 id="6、操作节点"><a class="header-anchor" href="#6、操作节点">¶</a>6、操作节点</h3>
+<p>添加/创建元素<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45982458/article/details/123233711">(4条消息) 如何在DOM中添加元素_站在桥上烤冷面的博客-CSDN博客_添加dom元素</a></p>
+<p>删除元素dom.remove() <a target="_blank" rel="noopener" href="https://blog.csdn.net/leejj_520/article/details/69388329">(4条消息) DOM节点的删除_leejj_520的博客-CSDN博客_dom移除节点</a></p>
+<p>新增结点onclick属性报错（使用addEventListener和setAttribute都不行）使用了dom.onclick=()=&gt;{}才可以了哦</p>
+<p>获取结点数量：<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15060513/3445242">怎么获取页面dom节点数量_51CTO博客_vue获取dom节点</a></p>
+<p>获取所有元素：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a18339063397/article/details/125762065">(4条消息) JavaScript选择器函数querySelector和querySelectorAll_弯弯的小溪的博客-CSDN博客_queryselector</a></p>
+<p>常用方法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wanghe1111_/article/details/123300695">(4条消息) dom元素操作的常用方法（创建、添加、删除、修改属性）_veggie_a_h的博客-CSDN博客_dom 添加属性</a></p>
+<p>注：create了span结点后， 使用结点.innerHTML的方法向里面塞值</p>
 
   </article>
 
@@ -391,7 +409,7 @@ Vue.use(iView)
 
  
 
-<script async src="/js/app.js?v=1670232714152"></script>
+<script async src="/js/app.js?v=1670656139268"></script>
 
 
 
@@ -409,6 +427,21 @@ Vue.use(iView)
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>DiffusionModel扩散模型 - 草莓葱丁的小屋</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="null">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    
+
+    <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
+    <meta name="description" content="Diffusion Model 扩散模型 参考视频：强推！不愧是公认的讲的最好的【Diffusion模型全套教程】同济大佬3小时带你从入门到进阶（深度学习&#x2F;神经网络&#x2F;GAN&#x2F;Diffusion模型）_哔哩哔哩_bilibili markdown中公式书写：如何在简书Markdown中输入数学公式 - 简书 (jianshu.com)、Markdown常用数学公式_nanyidev的博客-CSDN博">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DiffusionModel扩散模型">
+<meta property="og:url" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/index.html">
+<meta property="og:site_name" content="草莓葱丁的小屋">
+<meta property="og:description" content="Diffusion Model 扩散模型 参考视频：强推！不愧是公认的讲的最好的【Diffusion模型全套教程】同济大佬3小时带你从入门到进阶（深度学习&#x2F;神经网络&#x2F;GAN&#x2F;Diffusion模型）_哔哩哔哩_bilibili markdown中公式书写：如何在简书Markdown中输入数学公式 - 简书 (jianshu.com)、Markdown常用数学公式_nanyidev的博客-CSDN博">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221207200341187.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221207111459671.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221209120707002.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221209121306165.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221209132019605.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221210104241798.png">
+<meta property="article:published_time" content="2022-12-09T05:34:15.000Z">
+<meta property="article:modified_time" content="2022-12-10T07:08:30.690Z">
+<meta property="article:author" content="Umrabbit">
+<meta property="article:tag" content="人工智能">
+<meta property="article:tag" content="text to image">
+<meta property="article:tag" content="数学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://umrabbit.github.io/2022/12/09/DiffusionModel/image-20221207200341187.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670656139259">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1670656139259">
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/cover.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="Umrabbit" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/avatar.jpg" alt="Umrabbit"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Umrabbit">
+            <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/avatar.jpg" alt="Umrabbit" alt="Umrabbit">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>7</div>
+        <div><span>标签</span>8</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于本人">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于本人
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+    
+    <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://steamcommunity.com/id/806596330" target="_blank" mdui-tooltip="{content: 'Steam'}" style="color: rgb(65, 105, 225);background-color: rgba(65, 105, 225, .15);">
+            <i class="nexmoefont icon-steam"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/1743356649" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/Umrabbit" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://www.douban.com/people/195551175" target="_blank" mdui-tooltip="{content: '豆瓣'}" style="color: rgb(50, 205, 140);background-color: rgba(50, 205, 140, .15);">
+            <i class="nexmoefont icon-douban-fill"></i>
+        </a>
+    </div>
+</div>
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/UE/">UE</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/人工智能/">人工智能</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/前端/">前端</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+    
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Electron/" style="font-size: 20px;">Electron</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a> <a href="/tags/text-to-image/" style="font-size: 10px;">text to image</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 10px;">人工智能</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 20px;">数学</a> <a href="/tags/%E7%89%B9%E6%95%88/" style="font-size: 10px;">特效</a> <a href="/tags/%E7%BB%93%E7%82%B9%E8%AF%A6%E8%A7%A3/" style="font-size: 20px;">结点详解</a>
+    </div>
+    
+  </div>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 Umrabbit
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+      
+          <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
+              <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/0103.png" alt="DiffusionModel扩散模型" loading="lazy">
+              <h1>DiffusionModel扩散模型</h1>
+          </div>
+      
+      
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年12月09日</a>
+</div>
+
+      <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    
+        <a><i class="nexmoefont icon-areachart"></i>约2.1k字</a>
+        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要8分钟</a>
+    
+</div>
+
+      <h1>Diffusion Model 扩散模型</h1>
+<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i24y1d7mC/?spm_id_from=333.337.search-card.all.click&amp;vd_source=fedd63d1241eee0444e35a1176c2d242">强推！不愧是公认的讲的最好的【Diffusion模型全套教程】同济大佬3小时带你从入门到进阶（深度学习/神经网络/GAN/Diffusion模型）_哔哩哔哩_bilibili</a></p>
+<p>markdown中公式书写：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/67a27c9effc5/">如何在简书Markdown中输入数学公式 - 简书 (jianshu.com)</a>、<a target="_blank" rel="noopener" href="https://blog.csdn.net/ji_meng/article/details/123598174">Markdown常用数学公式_nanyidev的博客-CSDN博客_markdown 数学公式</a></p>
+<h2 id="❤️‍🔥-前置：正态分布"><a class="header-anchor" href="#❤️‍🔥-前置：正态分布">¶</a>❤️‍🔥 前置：正态分布</h2>
+<h3 id="1、基本概念"><a class="header-anchor" href="#1、基本概念">¶</a>1、基本概念</h3>
+<p>服从正态分布可表示为：<br>
+$$<br>
+Z\sim N(0,1)<br>
+$$<br>
+其中，μ=0，σ=1</p>
+<p>具体参数及含义如下表：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>μ</td>
+<td>均值；期望</td>
+</tr>
+<tr>
+<td>σ</td>
+<td>标准差</td>
+</tr>
+<tr>
+<td>$σ^2$</td>
+<td>方差</td>
+</tr>
+</tbody>
+</table>
+<p>方差公式：</p>
+<ul>
+<li>标准差^2</li>
+<li>其含义为与均值的距离的均值。由于减去（距离的均值）结果有正有负，所以添上平方</li>
+<li>式子🍒可以翻译成式子🍏，即对（数字x<sub>i</sub>减去均值x拔的平方）求均值</li>
+</ul>
+<p>$$<br>
+🍒σ^2=E[(X-E(x))^2]🍒<br>
+$$</p>
+<p>方差公式也可写为：<br>
+$$<br>
+🍏σ^2=\frac{\sum_{i=1}^{n}(x_i-\overline{x})^2}{n}🍏<br>
+$$<br>
+从该式子中可以进行的解读是：<strong>方差</strong>=（数据与均值之间）<strong>平均距离</strong></p>
+<h3 id="2、图像表示"><a class="header-anchor" href="#2、图像表示">¶</a>2、图像表示</h3>
+<p>正态分布图像：方差越小，数据越集中；方差越大，数据越分散</p>
+<img src="/2022/12/09/DiffusionModel/image-20221207200341187.png" class="" title="image-20221207200341187">
+<h3 id="3、运算法则"><a class="header-anchor" href="#3、运算法则">¶</a>3、运算法则</h3>
+<p>➕加法➕：①如果两个相互独立的正态分布X~N(u1,m)，Y~N(u2,n)，那么Z=X±Y仍然服从正态分布：</p>
+<p>$$<br>
+Z\sim N(u1±u2,m+n)<br>
+$$<br>
+➕加法➕：②正态分布加一个常数,还是符合正态分布,只是期望值加上了这个常数：</p>
+<p>$$<br>
+N(0,σ²)+C \sim N(C,σ²)<br>
+$$<br>
+❌乘法❌：在标准正态分布前乘以一个常数后，服从如下分布：</p>
+<p>$$<br>
+aX\sim N(0,a^2)<br>
+$$</p>
+<h2 id="🎣-流程概述"><a class="header-anchor" href="#🎣-流程概述">¶</a>🎣 流程概述</h2>
+<p>扩散模型建模整体分为两个步骤：</p>
+<ol>
+<li>前向加噪。一共n个时刻，每个时刻都向图像中添加噪声，<strong>噪声满足标准的正态分布</strong>。噪声本质上就是标签。</li>
+<li>后向去噪。知道了怎么加噪声就知道怎么还原图像。</li>
+</ol>
+<h2 id="🪀-前向加噪"><a class="header-anchor" href="#🪀-前向加噪">¶</a>🪀 前向加噪</h2>
+<p>从X<sub>0</sub>时刻开始，依次向图像中添加噪声。而每个时刻加的噪声量是不一样的，因为我们希望每个时刻加了噪声之后，图像的<strong>扩散幅度</strong>是一样。前面时刻的图像加一点点肉眼就能看出扩散幅度，后面时刻的图像中噪声分布得已经极没有规律了，如果还加一点点噪声，那就完全没有效果，看不出扩散幅度了。所以往后，加的噪声是越来越多的。<strong>即，越往后噪声的影响越大，上一时刻的状态影响越小。</strong></p>
+<img src="/2022/12/09/DiffusionModel/image-20221207111459671.png" class="" title="image-20221207111459671">
+<p>假设<strong>β</strong>是每幅图像噪声加成的<strong>权重项</strong>，β值在0.0001-0.002范围内自己调，我们令：<br>
+$$<br>
+α_t=1-β_t<br>
+$$<br>
+某一时刻的分布X<sub>t</sub>计算公式如下所示：<br>
+$$<br>
+🍓X_t=\sqrt{α_t}x_{t-1}+\sqrt{1-α_t}z_1 🍓<br>
+$$<br>
+某一时刻的分布=权重1*上一时刻的分布+权重2*新输入的噪声。越往后噪声的权重越大，上一时刻的分布的权重越小。已知X<sub>0</sub>，要想求出X<sub>t</sub>时刻的分布，得通过<strong>递归</strong>的方式，先求X<sub>t-1</sub>再求X<sub>t-2</sub>以此类推，很像RNN，只能串行，效率低 （这也是RNN后来被Transformer取代的原因之一）。所以我们期望，<strong>通过X<sub>0</sub>，不考虑中间其他时刻噪声的分布，而直接求出X<sub>t</sub>。</strong></p>
+<hr>
+<p>🦖推导过程：</p>
+<p>先求出X<sub>t-1</sub>的分布瞅瞅：<br>
+$$<br>
+X_{t-1}=\sqrt{α_{t-1}}x_{t-2}+\sqrt{1-α_{t-1}}z_2<br>
+$$<br>
+X<sub>t-1</sub>代入🍓式中得🎃：（其中z<sub>1</sub>z<sub>2</sub>都满足标准的正态分布）<br>
+$$<br>
+🎃X_t=\sqrt{α_tα_{t-1}}x_{t-2}+\sqrt{α_t(1-α_{t-1})}z_2+\sqrt{1-α_t}z_1🎃<br>
+$$<br>
+由于z1、z2均为服从(0,1)的正态分布，两者前面乘上一个常数后服从的分布为：<br>
+$$<br>
+\sqrt{1-α_t}z_1\sim N(0,1-α_t)<br>
+$$<br>
+$$<br>
+\sqrt{α_t(1-α_{t-1})}z_2\sim N(0,α_t(1-α_{t-1}))<br>
+$$<br>
+两者相加后服从的正态分布为：<br>
+$$<br>
+\sqrt{1-α_t}z_1+\sqrt{α_t(1-α_{t-1})}\sim N(0,1-α_tα_{t-1})<br>
+$$<br>
+还原到式子🎃中得（其中z<sub>2</sub>拔表示为一个标准正态分布，所以等同于z<sub>1</sub>）：<br>
+$$<br>
+X_t=\sqrt{α_tα_{t-1}}x_{t-2}+\sqrt{1-α_tα_{t-1}}\overline{z}_2<br>
+$$<br>
+观察该式与🍓式子：<br>
+$$<br>
+🍓X_t=\sqrt{α_t}x_{t-1}+\sqrt{1-α_t}z_1 🍓<br>
+$$<br>
+发现想求x<sub>t-2</sub>时，仅在根号下跟着α<sub>t</sub>后面跟着乘一个α<sub>t-1</sub>即可。由此推出：<br>
+$$<br>
+🐨X_t=\sqrt{\overline{α}_t}x_0+\sqrt{1-{\overline{α}_t}}{z_{t}}🐨<br>
+$$<br>
+其中α拔为α的累乘，z<sub>t</sub>为标准正态分布，x<sub>0</sub>为原始图像分布，任意时刻的X<sub>T</sub>可以由此式求出</p>
+<h2 id="🎐-反向去噪"><a class="header-anchor" href="#🎐-反向去噪">¶</a>🎐 反向去噪</h2>
+<p>目标：希望通过知道X<sub>t</sub>的分布反向推导出X<sub>0</sub>，但直接推出来是不现实的。所以我们慢慢通过<strong>推导X<sub>t-1</sub>、X<sub>t-2</sub>如此迭代下来到X<sub>0</sub></strong></p>
+<p>首先努力通过已知X<sub>t</sub>的分布（后一时刻）反向推导出X<sub>t-1</sub>的分布（前一时刻）。我们使用到<strong>贝叶斯公式</strong>进行转换。</p>
+<p>贝叶斯公式：已知由A分布求出的B分布，可以逆转，由X<sub>t-1</sub>分布倒推出X<sub>t</sub>分布<br>
+$$<br>
+P(A|B)=P(B|A)\frac{P(A)}{P(B)}<br>
+$$<br>
+运用到这里来就是：已知由X<sub>t</sub>分布求出的X<sub>t-1</sub>分布，可以逆转，由X<sub>t-1</sub>分布倒推出X<sub>t</sub>分布<br>
+$$<br>
+q(X_{t-1}|X_t,X_0)=q(X_t|X_{t-1},X_0)\frac{q(X_{t-1}|X_0)}{q(X_t|X_0)}<br>
+$$<br>
+式中添加上X<sub>0</sub>是因为后面的X<sub>t-1</sub>和X<sub>t</sub>的分布都需要根据X<sub>0</sub>求出</p>
+<p>对每一项分布进行拆解：<br>
+$$<br>
+q(X_t|X_{t-1},X_0):🍓X_t=\sqrt{α_t}x_{t-1}+\sqrt{1-α_t}z 🍓\sim N(\sqrt{α_t}x_{t-1},1-α_t)<br>
+$$</p>
+<p>$$<br>
+{q(X_{t-1}|X_0)}:🐨X_{t-1}=\sqrt{\overline{α}_{t-1}}x_0+\sqrt{1-{\overline{α}_{t-1}}}{z}🐨\sim N(\sqrt{\overline{α}_{t-1}}x_0,1-{\overline{α}_{t-1}})<br>
+$$</p>
+<p>$$<br>
+{q(X_t|X_0)}:🐨X_t=\sqrt{\overline{α}_t}x_0+\sqrt{1-{\overline{α}_t}}{z}🐨\sim N(\sqrt{\overline{α}_t}x_0,1-{\overline{α}_t})<br>
+$$<br>
+正态分布N(μ,σ<sup>2</sup>)的公式如下所示：</p>
+<img src="/2022/12/09/DiffusionModel/image-20221209120707002.png" class="" title="image-20221209120707002">
+<p>将以上正态分布代入到公式后化简，整理成以下形式再一一对应，就可以得到σ<sup>2</sup>(是个常数)</p>
+<img src="/2022/12/09/DiffusionModel/image-20221209121306165.png" class="" title="image-20221209121306165">
+<p>已知σ<sup>2</sup>的值后，按照下面蓝框的形式，给上面蓝框乘上σ<sup>2</sup>再除以2，就可以得到期望μ的值，解出μ如下：</p>
+<img src="/2022/12/09/DiffusionModel/image-20221209132019605.png" class="" title="image-20221209132019605">
+<p>X<sub>0</sub>可以通过🐨式子推导出来：<br>
+$$<br>
+🐨X_t=\sqrt{\overline{α}_t}x_0+\sqrt{1-{\overline{α}_t}}{z_{t}}🐨<br>
+$$<br>
+$$<br>
+X_0=\frac{1}{\sqrt{\overline{a}_t}}(X_t-\sqrt{1-{\overline{a}_t}}z_t)<br>
+$$</p>
+<p>带入式中得μ：<br>
+$$<br>
+\tilde{μ}_t=\frac{1}{\sqrt{a_t}}(x_t-\frac{β_t}{\sqrt{1-\overline{a}_t}})z_t<br>
+$$<br>
+但此时，我们唯一不知道的量就是z<sub>t</sub>，即每个时刻加入的噪声</p>
+<h2 id="🦔-噪声建模"><a class="header-anchor" href="#🦔-噪声建模">¶</a>🦔 噪声建模</h2>
+<p>科学家们无法通过数学公式去推导出噪声，只能让机器利用深度学习去<strong>猜</strong>，利用模型去预测$z_t$，我们的前向过程中，向图像中加入的每一步噪声，都是我们自己通过采样得到的已知值，通过该已知值去拟合我们未知的$z_t$</p>
+<p>原始论文中是使用<strong>Unet</strong>这样的模型进行预测。每一时刻都需要Unet去推测前一时刻的$z_t$，由于输入不同，每个Unet也是不同的</p>
+<h2 id="🍧算法流程图"><a class="header-anchor" href="#🍧算法流程图">¶</a>🍧算法流程图</h2>
+<img src="/2022/12/09/DiffusionModel/image-20221210104241798.png" class="" title="image-20221210104241798">
+<h3 id="训练"><a class="header-anchor" href="#训练">¶</a><strong>训练</strong></h3>
+<p>$X_0\sim q(X_0) \quad$ 对数据集进行采样，即取数据</p>
+<p>$t\sim Uniform({1,…,T}) \quad$   构建一个t属于的序列，我们需要给每个batch扩散随机的次数，以防机器学到规律</p>
+<p>$\varepsilon\sim N(0,I) \quad$   噪声严格符合标准正态分布</p>
+<p>$\nabla_{\theta} \lvert\lvert\varepsilon-\varepsilon_\theta(\sqrt{\overline{α}_t}x_0+\sqrt{1-{\overline{α}_t}}{\varepsilon})\lvert\lvert^2 \quad$   整个式子表示梯度下降更新$\theta$权重参数。其中，$\varepsilon_\theta$为训练噪声的模型，模型中第一个参数是$X_t$时刻的图像，模型中第二个参数是告诉模型处于哪到哪第几幅图噪声的传播</p>
+<h3 id="采样"><a class="header-anchor" href="#采样">¶</a><strong>采样</strong></h3>
+<p>$X_t\sim N(0,I) \quad$$X_t$为在标准正态分布中随机采样的一个数值</p>
+<p>$t=T,…,1 \quad$for循环</p>
+<p>最后一步不加噪音点</p>
+<p>$X_{t-1}$后面的公式就是利用之前求出的均值和方差进行计算的。我们通过此公式持续训练$X_{t-1}$、$X_{t-2}$，结果不断往前传，直到训练出$X_0$</p>
+<h2 id="🫖示例代码"><a class="header-anchor" href="#🫖示例代码">¶</a>🫖示例代码</h2>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>Umrabbit<br>
+        <strong>本文链接：</strong><a href="https://umrabbit.github.io/2022/12/09/DiffusionModel/" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;09&#x2F;DiffusionModel&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;09&#x2F;DiffusionModel&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/text-to-image/" rel="tag">text to image</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+     
+    <div id="nexmoe-search-space">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-container">
+                    <input class="search-input" type="text" placeholder="搜索" oninput="sinput();">
+                </div>
+                <a class="search-close" onclick="sclose();">×</a>
+            </div>
+            <div class="search-body"></div>
+        </div>
+    </div>
+
+    
+<script src="/lib/mdui_043tiny/mdui.js"></script>
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/justifiedGallery/jquery.justifiedGallery.min.js"></script>
+<script src="/lib/fancybox/fancybox.umd.js"></script>
+
+
+ 
+
+<script async src="/js/app.js?v=1670656139261"></script>
+
+
+
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+
+    
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+</html>

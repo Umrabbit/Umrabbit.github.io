@@ -4,40 +4,43 @@
 
 <head>
     
-    <title>UE数学结点详解-0103-Frac取小数 - 草莓葱丁的小屋</title>
+    <title>UE数学结点详解-PartⅠ - 草莓葱丁的小屋</title>
     <meta charset="UTF-8">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="null">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     
 
     <link rel="shortcut icon" href="/images/strawberry.ico" type="image/x-icon" />
-    <meta name="description" content="💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处 🎪版本：基于的引擎版本为4.26 一、函数功能本次介绍的函数为：Frac取小数函数，其作用在于去除任意数字的整数部分，保留小数。 例如，输入(1.0,2.0)输出(0.0,1.0)之间的连续的小数 其函数图像如下所示：    二、使用示例⌛官方给出的实例是，一个物体的明暗颜色随着时间交替变化，其材质连线如图所示：">
+    <meta name="description" content="[TOC] 💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处 🎪版本：基于的引擎版本为4.26 ¶一、ABS绝对值函数 ¶1、函数功能 本次介绍的函数为：ABS绝对值函数，其作用在于将y&lt;0的部分，沿着x轴对称翻上来。 其函数图像如下所示：  ¶2、使用示例 ⌛官方给出的是一个沿世界坐标z轴上下跳跃的小球，其材质连线如图所示：  该节点较为简单，上方以Time输入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UE数学结点详解-0103-Frac取小数">
-<meta property="og:url" content="https://umrabbit.github.io/2022/12/05/0103-Frac/index.html">
+<meta property="og:title" content="UE数学结点详解-PartⅠ">
+<meta property="og:url" content="https://umrabbit.github.io/2022/12/05/UE-math1/index.html">
 <meta property="og:site_name" content="草莓葱丁的小屋">
-<meta property="og:description" content="💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处 🎪版本：基于的引擎版本为4.26 一、函数功能本次介绍的函数为：Frac取小数函数，其作用在于去除任意数字的整数部分，保留小数。 例如，输入(1.0,2.0)输出(0.0,1.0)之间的连续的小数 其函数图像如下所示：    二、使用示例⌛官方给出的实例是，一个物体的明暗颜色随着时间交替变化，其材质连线如图所示：">
+<meta property="og:description" content="[TOC] 💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处 🎪版本：基于的引擎版本为4.26 ¶一、ABS绝对值函数 ¶1、函数功能 本次介绍的函数为：ABS绝对值函数，其作用在于将y&lt;0的部分，沿着x轴对称翻上来。 其函数图像如下所示：  ¶2、使用示例 ⌛官方给出的是一个沿世界坐标z轴上下跳跃的小球，其材质连线如图所示：  该节点较为简单，上方以Time输入">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0103-Frac/image-20221205171038783.png">
-<meta property="og:image" content="d:\Blog\source_posts\0103-Frac\image-20221205172840014.png">
-<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/0103-Frac/image-20221205170955319.png">
-<meta property="article:published_time" content="2022-12-05T08:43:37.000Z">
-<meta property="article:modified_time" content="2022-12-05T09:31:43.945Z">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/absFunction.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/image-20221205153527540.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/absSine.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/image-20221205171038783.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/image-20221205172840014.png">
+<meta property="og:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/image-20221205170955319.png">
+<meta property="article:published_time" content="2022-12-05T07:24:15.000Z">
+<meta property="article:modified_time" content="2022-12-08T03:21:14.990Z">
 <meta property="article:author" content="Umrabbit">
-<meta property="article:tag" content="结点详解">
 <meta property="article:tag" content="数学">
+<meta property="article:tag" content="结点详解">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://umrabbit.github.io/2022/12/05/0103-Frac/image-20221205171038783.png">
+<meta name="twitter:image" content="https://umrabbit.github.io/2022/12/05/UE-math1/absFunction.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670232714148">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1670656139262">
     
-    <link rel="stylesheet" href="/css/style.css?v=1670232714148">
+    <link rel="stylesheet" href="/css/style.css?v=1670656139262">
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -62,7 +65,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>8</div>
+        <div><span>文章</span>7</div>
         <div><span>标签</span>8</div>
         <div><span>分类</span>3</div>
     </div>
@@ -139,7 +142,14 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/UE/">UE</a>
-          <span class="category-list-count">3</span>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/人工智能/">人工智能</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -147,13 +157,6 @@
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/前端/">前端</a>
           <span class="category-list-count">3</span>
-        </li>
-
-        
-
-        <li class="category-list-item">
-          <a class="category-list-link" href="/categories/测试/">测试</a>
-          <span class="category-list-count">1</span>
         </li>
 
         
@@ -167,7 +170,7 @@
     
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/Electron/" style="font-size: 15px;">Electron</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 15px;">数学</a> <a href="/tags/%E7%89%B9%E6%95%88/" style="font-size: 10px;">特效</a> <a href="/tags/%E7%BB%93%E7%82%B9%E8%AF%A6%E8%A7%A3/" style="font-size: 20px;">结点详解</a>
+      <a href="/tags/Electron/" style="font-size: 20px;">Electron</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a> <a href="/tags/text-to-image/" style="font-size: 10px;">text to image</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 10px;">人工智能</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 20px;">数学</a> <a href="/tags/%E7%89%B9%E6%95%88/" style="font-size: 10px;">特效</a> <a href="/tags/%E7%BB%93%E7%82%B9%E8%AF%A6%E8%A7%A3/" style="font-size: 20px;">结点详解</a>
     </div>
     
   </div>
@@ -189,8 +192,8 @@
   <article>
       
           <div class="nexmoe-post-cover" style="padding-bottom: NaN%;"> 
-              <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/0103.png" alt="UE数学结点详解-0103-Frac取小数" loading="lazy">
-              <h1>UE数学结点详解-0103-Frac取小数</h1>
+              <img src="https://raw.githubusercontent.com/Umrabbit/Umrabbit.github.io/main/images/0101.png" alt="UE数学结点详解-PartⅠ" loading="lazy">
+              <h1>UE数学结点详解-PartⅠ</h1>
           </div>
       
       
@@ -200,24 +203,36 @@
 
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     
-        <a><i class="nexmoefont icon-areachart"></i>约180字</a>
+        <a><i class="nexmoefont icon-areachart"></i>约386字</a>
         <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
     
 </div>
 
-      <hr>
+      <p>[TOC]</p>
 <p>💭前言：这一系列文章主要是研究官方示例中Math地图中的各函数功能及用处</p>
 <p>🎪版本：基于的引擎版本为4.26</p>
-<h2 id="一、函数功能"><a href="#一、函数功能" class="headerlink" title="一、函数功能"></a>一、函数功能</h2><p>本次介绍的函数为：<strong>Frac取小数函数</strong>，其作用在于去除任意数字的整数部分，保留小数。</p>
+<h2 id="一、ABS绝对值函数"><a class="header-anchor" href="#一、ABS绝对值函数">¶</a>一、ABS绝对值函数</h2>
+<h3 id="1、函数功能"><a class="header-anchor" href="#1、函数功能">¶</a>1、函数功能</h3>
+<p>本次介绍的函数为：<strong>ABS绝对值函数</strong>，其作用在于将y&lt;0的部分，沿着x轴对称翻上来。</p>
+<p>其函数图像如下所示：</p>
+<img src="/2022/12/05/UE-math1/absFunction.png" class="">
+<h3 id="2、使用示例"><a class="header-anchor" href="#2、使用示例">¶</a>2、使用示例</h3>
+<p>⌛官方给出的是一个沿世界坐标z轴上下跳跃的小球，其材质连线如图所示：</p>
+<img src="/2022/12/05/UE-math1/image-20221205153527540.png" class="" title="image-20221205153527540">
+<p>该节点较为简单，上方以Time输入到Sine函数中去，通过Abs绝对值函数将y轴下方图像翻上来，连接到线性插值Lerp的Alpha节点上，用于控制(0,0,-100)~(0,0,0)之间的插值程度，即小球的跳跃高度。最终将结果连接到WorldPositionOffset(世界位置偏移)上去。</p>
+<p>上方结点最终形成的图像大致如下所示：</p>
+<img src="/2022/12/05/UE-math1/absSine.png" class="">
+<h2 id="二、Frac取小数函数"><a class="header-anchor" href="#二、Frac取小数函数">¶</a>二、Frac取小数函数</h2>
+<h3 id="1、函数功能-v2"><a class="header-anchor" href="#1、函数功能-v2">¶</a>1、函数功能</h3>
+<p>本次介绍的函数为：<strong>Frac取小数函数</strong>，其作用在于去除任意数字的整数部分，保留小数。</p>
 <p>例如，输入(1.0,2.0)输出(0.0,1.0)之间的连续的小数</p>
 <p>其函数图像如下所示：</p>
-<img src="/2022/12/05/0103-Frac/image-20221205171038783.png" class="" title="image-20221205171038783">
-
-<p><img data-fancybox="gallery" src="D:\Blog\source_posts\0103-Frac\image-20221205172840014.png" alt="image-20221205172840014" data-caption="image-20221205172840014" loading="lazy"></p>
-<h2 id="二、使用示例"><a href="#二、使用示例" class="headerlink" title="二、使用示例"></a>二、使用示例</h2><p>⌛官方给出的实例是，一个物体的明暗颜色随着时间交替变化，其材质连线如图所示：</p>
-<img src="/2022/12/05/0103-Frac/image-20221205170955319.png" class="" title="image-20221205170955319">
-
-<p>该节点较为简单，对输入的Time使用Frac函数，连接到BaseColor上去控制按钮颜色。 </p>
+<img src="/2022/12/05/UE-math1/image-20221205171038783.png" class="" title="image-20221205171038783"><br>
+<img src="/2022/12/05/UE-math1/image-20221205172840014.png" class="" title="image-20221205172840014">
+<h3 id="2、使用示例-v2"><a class="header-anchor" href="#2、使用示例-v2">¶</a>2、使用示例</h3>
+<p>⌛官方给出的实例是，一个物体的明暗颜色随着时间交替变化，其材质连线如图所示：</p>
+<img src="/2022/12/05/UE-math1/image-20221205170955319.png" class="" title="image-20221205170955319">
+<p>该节点较为简单，对输入的Time使用Frac函数，连接到BaseColor上去控制按钮颜色。</p>
 
   </article>
 
@@ -225,7 +240,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>Umrabbit<br>
-        <strong>本文链接：</strong><a href="https://umrabbit.github.io/2022/12/05/0103-Frac/" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;0103-Frac&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;0103-Frac&#x2F;</a><br>
+        <strong>本文链接：</strong><a href="https://umrabbit.github.io/2022/12/05/UE-math1/" title="https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;UE-math1&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;umrabbit.github.io&#x2F;2022&#x2F;12&#x2F;05&#x2F;UE-math1&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -298,7 +313,7 @@
 
  
 
-<script async src="/js/app.js?v=1670232714149"></script>
+<script async src="/js/app.js?v=1670656139263"></script>
 
 
 
@@ -316,6 +331,21 @@
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 
 </html>
